@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 4</title>
+</head>
+
+<body>
+  <h1> ¡¡¡ La bomba !!! </h1>
+  <h2 id="timer">15</h2>
+  <script>
+    var timer_tag = document.getElementById('timer');
+    var timer = timer_tag.innerHTML;
+    timer = parseInt(timer);
+    var boom = setInterval(function () {
+      timer = timer - 1
+      timer_tag.innerHTML = timer
+      if (timer == 0) {
+        clearInterval(boom)
+        document.getElementsByTagName('h1')[0].innerHTML = 'BOOM!';
+        document.body.style.background = 'red';
+        timer_tag.innerHTML = '';
+      }
+    }, 1000);
+  </script>
+</body>
+
+</html>

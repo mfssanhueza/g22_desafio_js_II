@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ejercicio 5</title>
+</head>
+
+<body>
+  <button id="result">0</button><br>
+  <button onclick="add('1')">1</button>
+  <button onclick="add('2')">2</button>
+  <button onclick="add('3')">3</button><br>
+
+  <button onclick="add('4')">4</button>
+  <button onclick="add('5')">5</button>
+  <button onclick="add('6')">6</button><br>
+
+  <button onclick="add('7')">7</button>
+  <button onclick="add('8')">8</button>
+  <button onclick="add('9')">9</button>
+  <button onclick="add('0')">0</button><br>
+
+  <button onclick="add('+')">+</button>
+  <button onclick="add('-')">-</button>
+  <button onclick="add('*')">*</button>
+  <button onclick="add('/')">/</button>
+  <button onclick="limpiar()" class="borrar">borrar</button>
+  <button onclick="calc()">=</button>
+
+  <script>
+    function setResult(value) {
+      document.getElementById('result').innerHTML = value;
+    }
+    function getResult() {
+      return (document.getElementById('result').innerHTML);
+    }
+    function add(key) {
+      var result = getResult();
+      if (result != '0' || isNaN(key)) setResult(result + key);
+      else setResult(key);
+    }
+    function calc() {
+      var result = eval(getResult());
+      setResult(result);
+    }
+    function limpiar() {
+      setResult(0);
+    }
+  </script>
+</body>
+
+</html>
